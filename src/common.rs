@@ -48,7 +48,7 @@ pub enum GrabState {
 pub type NotifyMessageBox = fn(String, String, String, String) -> dyn Future<Output = ()>;
 
 // the executable name of the portable version
-pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "RUSTDESK_APPNAME";
+pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "SELFDESK_APPNAME";
 
 pub const PLATFORM_WINDOWS: &str = "Windows";
 pub const PLATFORM_LINUX: &str = "Linux";
@@ -921,7 +921,7 @@ pub fn get_app_name() -> String {
 
 #[inline]
 pub fn is_rustdesk() -> bool {
-    hbb_common::config::APP_NAME.read().unwrap().eq("RustDesk")
+    hbb_common::config::APP_NAME.read().unwrap().eq("SelfDesk")
 }
 
 #[inline]
@@ -996,12 +996,12 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "https://admin.SelfDesk.com".to_owned()
 }
 
 #[inline]
 pub fn is_public(url: &str) -> bool {
-    url.contains("rustdesk.com")
+    url.contains("SelfDesk.com")
 }
 
 pub fn get_audit_server(api: String, custom: String, typ: String) -> String {
@@ -1828,7 +1828,7 @@ pub fn get_builtin_option(key: &str) -> String {
 
 #[inline]
 pub fn is_custom_client() -> bool {
-    get_app_name() != "RustDesk"
+    get_app_name() != "SelfDesk"
 }
 
 pub fn verify_login(raw: &str, id: &str) -> bool {

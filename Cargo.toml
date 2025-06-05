@@ -5,7 +5,7 @@ authors = ["selfdesk <info@selfdesk.com>"]
 edition = "2021"
 build= "build.rs"
 description = "SelfDesk Software"
-default-run = "selfdesk"
+default-run = "rustdesk"
 rust-version = "1.75"
 
 [lib]

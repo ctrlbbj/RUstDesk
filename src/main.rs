@@ -3,7 +3,7 @@
     windows_subsystem = "windows"
 )]
 
-use libselfdesk::*;
+use librustdesk::*;
 
 #[cfg(any(target_os = "android", target_os = "ios", feature = "flutter"))]
 fn main() {
